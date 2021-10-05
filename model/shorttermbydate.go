@@ -7,6 +7,6 @@ type Shorttermbydate struct {
 	Goals     string    `json: "goals" gorm:"not null"`
 	Deadline  time.Time `json: "deadline" gorm:"not null"`
 	CreatedAt int64     `gorm:"autoCreateTime"`
-	StatusID  uint		`json: "stausid"`
+	StatusID  uint		`json: "statusid"`
 	Status    Status
 }

@@ -13,6 +13,15 @@ func main() {
 
 	app := echo.New()
 
-	routes.PritntData(app)
+	
+	routes.RouteLoginuser(app)
+	routes.RouteAllterm(app)
+	routes.RouteShortterm(app)
+	routes.RouteShorttermbydate(app)
+	routes.RouteMediumterm(app)
+	routes.RouteMediumtermbydate(app)
+	routes.RouteLongterm(app)
+	routes.RouteLongtermbyage(app)
+	routes.RouteLongtermnolimit(app)
 	app.Start(":8080")
 }

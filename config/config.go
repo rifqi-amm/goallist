@@ -21,6 +21,7 @@ func InitDB() {
 
 func InitMigration() {
 	DB.AutoMigrate(
+		&model.User{},
 		&model.Status{},
 		&model.Shortterm{},
 		&model.Shorttermbydate{},

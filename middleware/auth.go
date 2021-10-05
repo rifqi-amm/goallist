@@ -8,7 +8,6 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-
 func JWTAuthMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
 	return func(c echo.Context) error {
 		// Bearer token-blablala=
