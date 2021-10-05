@@ -20,13 +20,14 @@ func InitDB() {
 }
 
 func InitMigration() {
-	DB.AutoMigrate(&model.Users{})
-	DB.AutoMigrate(&model.Status{})
-	DB.AutoMigrate(&model.Shortterm{})
-	DB.AutoMigrate(&model.Shorttermbydate{})
-	DB.AutoMigrate(&model.Mediumterm{})
-	DB.AutoMigrate(&model.Mediumtermbydate{})
-	DB.AutoMigrate(&model.Longterm{})
-	DB.AutoMigrate(&model.Longtermbyage{})
-	DB.AutoMigrate(&model.Longtermnolimit{})
+	DB.AutoMigrate(
+		&model.Status{},
+		&model.Shortterm{},
+		&model.Shorttermbydate{},
+		&model.Mediumterm{},
+		&model.Mediumtermbydate{},
+		&model.Longterm{},
+		&model.Longtermbyage{},
+		&model.Longtermnolimit{},
+	)
 }

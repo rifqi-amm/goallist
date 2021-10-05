@@ -12,6 +12,7 @@ func main() {
 	config.InitMigration()
 
 	app := echo.New()
+
 	routes.PritntData(app)
 	app.Start(":8080")
 }
