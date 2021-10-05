@@ -20,6 +20,7 @@ func InitDB() {
 }
 
 func InitMigration() {
+	DB.AutoMigrate(&model.Users{})
 	DB.AutoMigrate(&model.Status{})
 	DB.AutoMigrate(&model.Shortterm{})
 	DB.AutoMigrate(&model.Shorttermbydate{})
