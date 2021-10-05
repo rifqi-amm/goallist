@@ -8,6 +8,7 @@ import (
 
 func RouteShortterm(app *echo.Echo) {
 	app.GET("/shortterm", controller.PrintShortterm)
+	app.GET("/shortterm/:id", controller.PrintShorttermByID)
 	app.POST("/shortterm", controller.PrintCreateShortterm)
 	app.PUT("/shortterm/:id", controller.PrintUpdateShortterm)
 	app.DELETE("/shortterm/:id", controller.PrintDeleteShortterm)

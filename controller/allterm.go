@@ -29,3 +29,5 @@ func PrintAllterm(c echo.Context) error {
 		"data":    Data,
 	})
 }
+
+

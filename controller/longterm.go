@@ -17,6 +17,15 @@ func PrintLongterm(c echo.Context) error {
 	})
 }
 
+func PrintLongtermByID(c echo.Context) error {
+	id := c.Param("id")
+	term := database.GetLongtermByID(id)
+	return c.JSON(http.StatusOK, echo.Map{
+		"message": "Succes to show a goal list",
+		"data":    term,
+	})
+}
+
 func PrintCreateLongterm(c echo.Context) error {
 	var newTerm model.Longterm
 	if err := c.Bind(&newTerm); err != nil {

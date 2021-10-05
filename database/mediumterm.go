@@ -11,6 +11,12 @@ func GetMediumterm() []model.Mediumterm {
 	return term
 }
 
+func GetMediumtermByID(id string) model.Mediumterm {
+	var term model.Mediumterm
+	config.DB.Preload("Status").Where("id = ?", id).Find(&term)
+	return term
+}
+
 func CreateMediumterm(term model.Mediumterm) model.Mediumterm {
 	config.DB.Create(&term)
 	return term

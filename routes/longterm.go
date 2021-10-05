@@ -8,6 +8,7 @@ import (
 
 func RouteLongterm(app *echo.Echo) {
 	app.GET("/longterm", controller.PrintLongterm)
+	app.GET("/longterm/:id", controller.PrintLongtermByID)
 	app.POST("/longterm", controller.PrintCreateLongterm)
 	app.PUT("/longterm/:id", controller.PrintUpdateLongterm)
 	app.DELETE("/longterm/:id", controller.PrintDeleteLongterm)

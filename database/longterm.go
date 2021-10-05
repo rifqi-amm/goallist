@@ -11,6 +11,12 @@ func GetLongterm() []model.Longterm {
 	return term
 }
 
+func GetLongtermByID(id string) model.Longterm {
+	var term model.Longterm
+	config.DB.Preload("Status").Where("id = ?", id).Find(&term)
+	return term
+}
+
 func CreateLongterm(term model.Longterm) model.Longterm {
 	config.DB.Preload("Status").Create(&term)
 	return term

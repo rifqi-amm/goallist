@@ -11,6 +11,12 @@ func GetLongtermnolimit() []model.Longtermnolimit {
 	return term
 }
 
+func GetLongtermnolimitByID(id string) model.Longtermnolimit {
+	var term model.Longtermnolimit
+	config.DB.Preload("Status").Where("id = ?", id).Find(&term)
+	return term
+}
+
 func CreateLongtermnolimit(term model.Longtermnolimit) model.Longtermnolimit {
 	config.DB.Create(&term)
 	return term

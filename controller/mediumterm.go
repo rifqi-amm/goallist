@@ -17,6 +17,15 @@ func PrintMediumterm(c echo.Context) error {
 	})
 }
 
+func PrintMediumtermByID(c echo.Context) error {
+	id := c.Param("id")
+	term := database.GetMediumtermByID(id)
+	return c.JSON(http.StatusOK, echo.Map{
+		"message": "Succes to show a goal list",
+		"data":    term,
+	})
+}
+
 func PrintCreateMediumterm(c echo.Context) error {
 	var newTerm model.Mediumterm
 	if err := c.Bind(&newTerm); err != nil {

@@ -17,6 +17,15 @@ func PrintShortterm(c echo.Context) error {
 	})
 }
 
+func PrintShorttermByID(c echo.Context) error {
+	id := c.Param("id")
+	term := database.GetShorttermByID(id)
+	return c.JSON(http.StatusOK, echo.Map{
+		"message": "Succes to show a goal list",
+		"data":    term,
+	})
+}
+
 func PrintCreateShortterm(c echo.Context) error {
 	var newTerm model.Shortterm
 	if err := c.Bind(&newTerm); err != nil {

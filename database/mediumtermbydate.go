@@ -11,6 +11,12 @@ func GetMediumtermbydate() []model.Mediumtermbydate {
 	return term
 }
 
+func GetMediumtermbydateByID(id string) model.Mediumtermbydate {
+	var term model.Mediumtermbydate
+	config.DB.Preload("Status").Where("id = ?", id).Find(&term)
+	return term
+}
+
 func CreateMediumtermbydate(term model.Mediumtermbydate) model.Mediumtermbydate {
 	config.DB.Create(&term)
 	return term

@@ -11,6 +11,12 @@ func GetShortterm() []model.Shortterm {
 	return term
 }
 
+func GetShorttermByID(id string) model.Shortterm {
+	var term model.Shortterm
+	config.DB.Preload("Status").Where("id = ?", id).Find(&term)
+	return term
+}
+
 func CreateShortterm(term model.Shortterm) model.Shortterm {
 	config.DB.Create(&term)
 	return term

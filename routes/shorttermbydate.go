@@ -8,6 +8,7 @@ import (
 
 func RouteShorttermbydate(app *echo.Echo) {
 	app.GET("/shorttermbydate", controller.PrintShorttermbydate)
+	app.GET("/shorttermbydate/:id", controller.PrintShorttermbydateByID)
 	app.POST("/shorttermbydate", controller.PrintCreateShorttermbydate)
 	app.PUT("/shorttermbydate/:id", controller.PrintUpdateShorttermbydate)
 	app.DELETE("/shorttermbydate/:id", controller.PrintDeleteShorttermbydate)

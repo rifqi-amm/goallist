@@ -11,6 +11,12 @@ func GetShorttermbydate() []model.Shorttermbydate {
 	return term
 }
 
+func GetShorttermbydateByID(id string) model.Shorttermbydate {
+	var term model.Shorttermbydate
+	config.DB.Preload("Status").Where("id = ?", id).Find(&term)
+	return term
+}
+
 func CreateShorttermbydate(term model.Shorttermbydate) model.Shorttermbydate {
 	config.DB.Create(&term)
 	return term

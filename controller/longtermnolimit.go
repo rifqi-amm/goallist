@@ -17,6 +17,15 @@ func PrintLongtermnolimit(c echo.Context) error {
 	})
 }
 
+func PrintLongtermnolimitByID(c echo.Context) error {
+	id := c.Param("id")
+	term := database.GetLongtermnolimitByID(id)
+	return c.JSON(http.StatusOK, echo.Map{
+		"message": "Succes to show a goal list",
+		"data":    term,
+	})
+}
+
 func PrintCreateLongtermnolimit(c echo.Context) error {
 	var newTerm model.Longtermnolimit
 	if err := c.Bind(&newTerm); err != nil {

@@ -11,6 +11,12 @@ func GetLongtermbyage() []model.Longtermbyage {
 	return term
 }
 
+func GetLongtermbyageByID(id string) model.Longtermbyage {
+	var term model.Longtermbyage
+	config.DB.Preload("Status").Where("id = ?", id).Find(&term)
+	return term
+}
+
 func CreateLongtermbyage(term model.Longtermbyage) model.Longtermbyage {
 	config.DB.Create(&term)
 	return term

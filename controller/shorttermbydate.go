@@ -17,6 +17,15 @@ func PrintShorttermbydate(c echo.Context) error {
 	})
 }
 
+func PrintShorttermbydateByID(c echo.Context) error {
+	id := c.Param("id")
+	term := database.GetShorttermbydateByID(id)
+	return c.JSON(http.StatusOK, echo.Map{
+		"message": "Succes to show a goal list",
+		"data":    term,
+	})
+}
+
 func PrintCreateShorttermbydate(c echo.Context) error {
 	var newTerm model.Shorttermbydate
 	if err := c.Bind(&newTerm); err != nil {

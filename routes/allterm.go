@@ -7,6 +7,5 @@ import (
 )
 
 func RouteAllterm(app *echo.Echo) {
-	// Print All Goal List
 	app.GET("/allterm", controller.PrintAllterm)
 }
