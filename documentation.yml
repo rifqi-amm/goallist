@@ -1,0 +1,397 @@
+openapi: "3.0.2"
+info:
+  title: GOAL LIST
+  version: "1.0"
+  description: "a project that serves to record targets/ programs"
+  contact:
+    email: rifqiagniamubarok@gmail.com
+servers:
+  - url: https://api.server.test/v1
+tags:
+  - name: common
+    description: Common request
+  - name: short term
+    description: Goal List in short term
+  - name: short term by date
+    description: Goal List in short term and the deadline using date
+  - name: medium term
+    description: Goal List in medium term
+  - name: medium term by date
+    description: Goal List in medium term and the deadline using date
+  - name: long term
+    description: Goal List in long term
+  - name: long term by age
+    description: Goal List in long term and the deadline is what age target you want
+  - name: long term no limit
+    description: Goal List in long termand no target
+paths:
+  # ---- lines ----
+  /allterm:
+    get:
+      tags:
+        - common
+      description: to see all goal you have
+      responses:
+        "200":
+          description: succes
+  # ---- lines ----
+  /shortterm:
+    get:
+      tags:
+        - short term
+      description: to see all goals in shortterm
+      responses:
+        "200":
+          description: succes
+    post:
+      tags:
+        - short term
+      description: to create a goal list to this db
+      responses:
+        "200":
+          description: succes
+  "/shortterm/{id}":
+    put:
+      tags:
+        - short term
+      description: to update some data to a goal list in this db by using it's id
+      responses:
+        "200":
+          description: succes
+
+    delete:
+      tags:
+        - short term
+      description: to delete a goal list in this db by using it's id
+      responses:
+        "200":
+          description: succes
+  # ---- lines ----
+  /shorttermbydate:
+    get:
+      tags:
+        - short term by date
+      description: to see all goals in this db
+      responses:
+        "200":
+          description: succes
+    post:
+      tags:
+        - short term by date
+      description: to create a goal list to this db
+      responses:
+        "200":
+          description: succes
+  "/shorttermbydate/{id}":
+    put:
+      tags:
+        - short term by date
+      description: to update some data to a goal list in this db by using it's id
+      responses:
+        "200":
+          description: succes
+
+    delete:
+      tags:
+        - short term by date
+      description: to delete a goal list in this db by using it's id
+      responses:
+        "200":
+          description: succes
+  # ---- lines ----
+  /mediumterm:
+    get:
+      tags:
+        - medium term
+      description: to see all goals in this db
+      responses:
+        "200":
+          description: succes
+    post:
+      tags:
+        - medium term
+      description: to create a goal list to this db
+      responses:
+        "200":
+          description: succes
+  "/mediumterm/{id}":
+    put:
+      tags:
+        - medium term
+      description: to update some data to a goal list in this db by using it's id
+      responses:
+        "200":
+          description: succes
+
+    delete:
+      tags:
+        - medium term
+      description: to delete a goal list in this db by using it's id
+      responses:
+        "200":
+          description: succes
+  # ---- lines ----
+  /mediumtermbydate:
+    get:
+      tags:
+        - medium term by date
+      description: to see all goals in this db
+      responses:
+        "200":
+          description: succes
+    post:
+      tags:
+        - medium term by date
+      description: to create a goal list to this db
+      responses:
+        "200":
+          description: succes
+  "/mediumtermbydate/{id}":
+    put:
+      tags:
+        - medium term by date
+      description: to update some data to a goal list in this db by using it's id
+      responses:
+        "200":
+          description: succes
+
+    delete:
+      tags:
+        - medium term by date
+      description: to delete a goal list in this db by using it's id
+      responses:
+        "200":
+          description: succes
+  # ---- lines ----
+  /longterm:
+    get:
+      tags:
+        - long term
+      description: to see all goals in this db
+      responses:
+        "200":
+          description: succes
+    post:
+      tags:
+        - long term
+      description: to create a goal list to this db
+      responses:
+        "200":
+          description: succes
+  "/longterm/{id}":
+    put:
+      tags:
+        - long term
+      description: to update some data to a goal list in this db by using it's id
+      responses:
+        "200":
+          description: succes
+
+    delete:
+      tags:
+        - long term
+      description: to delete a goal list in this db by using it's id
+      responses:
+        "200":
+          description: succes
+  # ---- lines ----
+  /longtermbyage:
+    get:
+      tags:
+        - long term by age
+      description: to see all goals to this db
+      responses:
+        "200":
+          description: succes
+    post:
+      tags:
+        - long term by age
+      description: to create a goal list to this db
+      responses:
+        "200":
+          description: succes
+  "/longtermbyage/{id}":
+    put:
+      tags:
+        - long term by age
+      description: to update some data to a goal list in this db by using it's id
+      responses:
+        "200":
+          description: succes
+
+    delete:
+      tags:
+        - long term by age
+      description: to delete a goal list in this db by using it's id
+      responses:
+        "200":
+          description: succes
+  # ---- lines ----
+  /longtermnolimit:
+    get:
+      tags:
+        - long term no limit
+      description: to see all goals in this db
+      responses:
+        "200":
+          description: succes
+    post:
+      tags:
+        - long term no limit
+      description: to create a goal list to this db
+      responses:
+        "200":
+          description: succes
+  "/longtermnolimit/{id}":
+    put:
+      tags:
+        - long term no limit
+      description: to update some data to a goal list in this db by using it's id
+      responses:
+        "200":
+          description: succes
+
+    delete:
+      tags:
+        - long term no limit
+      description: to delete a goal list in this db by using it's id
+      responses:
+        "200":
+          description: succes
+
+# ---- model -----
+components:
+  schemas:
+    shortterm:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: uint
+        goals:
+          type: string
+          format: string
+        deadline:
+          type: integer
+          format: uint
+        statusid:
+          type: integer
+          format: uint
+      xml:
+        name: Order
+    shorttermbydate:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: uint
+        goals:
+          type: string
+          format: string
+        deadline:
+          type: integer
+          format: uint
+        statusid:
+          type: integer
+          format: uint
+      xml:
+        name: Order
+    mediumterm:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: uint
+        goals:
+          type: string
+          format: string
+        deadline:
+          type: integer
+          format: uint
+        statusid:
+          type: integer
+          format: uint
+      xml:
+        name: Order
+    mediumtermbydate:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: uint
+        goals:
+          type: string
+          format: string
+        deadline:
+          type: integer
+          format: uint
+        statusid:
+          type: integer
+          format: uint
+      xml:
+        name: Order
+    longterm:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: uint
+        goals:
+          type: string
+          format: string
+        deadline:
+          type: integer
+          format: uint
+        statusid:
+          type: integer
+          format: uint
+      xml:
+        name: Order
+    longtermbyage:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: uint
+        goals:
+          type: string
+          format: string
+        deadline:
+          type: integer
+          format: uint
+        statusid:
+          type: integer
+          format: uint
+      xml:
+        name: Order
+    longtermnolimit:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: uint
+        goals:
+          type: string
+          format: string
+        description:
+          type: string
+          format: string
+        statusid:
+          type: integer
+          format: uint
+      xml:
+        name: Order
+    user:
+      type: object
+      properties:
+        name:
+          type: string
+          format: string
+        email:
+          type: string
+          format: string
+        password:
+          type: string
+          format: string
+      xml:
+        name: Order
