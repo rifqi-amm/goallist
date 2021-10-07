@@ -5,8 +5,6 @@ info:
   description: "a project that serves to record targets/ programs"
   contact:
     email: rifqiagniamubarok@gmail.com
-servers:
-  - url: https://api.server.test/v1
 tags:
   - name: common
     description: Common request
@@ -24,6 +22,8 @@ tags:
     description: Goal List in long term and the deadline is what age target you want
   - name: long term no limit
     description: Goal List in long termand no target
+  - name: user account
+    description: User list who can access to these data
 paths:
   # ---- lines ----
   /allterm:
@@ -254,6 +254,38 @@ paths:
     delete:
       tags:
         - long term no limit
+      description: to delete a goal list in this db by using it's id
+      responses:
+        "200":
+          description: succes
+  # ---- lines ----
+  /User:
+    get:
+      tags:
+        - user account
+      description: to see all goals in this db
+      responses:
+        "200":
+          description: succes
+    post:
+      tags:
+        - user account
+      description: to create a goal list to this db
+      responses:
+        "200":
+          description: succes
+  "/User/{id}":
+    put:
+      tags:
+        - user account
+      description: to update some data to a goal list in this db by using it's id
+      responses:
+        "200":
+          description: succes
+
+    delete:
+      tags:
+        - user account
       description: to delete a goal list in this db by using it's id
       responses:
         "200":
