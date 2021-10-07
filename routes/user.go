@@ -8,9 +8,9 @@ import (
 )
 
 func RouteUser(app *echo.Echo) {
-	app.GET("/User", controller.PrintUser, middleware.JWTAuthMiddleware)
-	app.GET("/User/:id", controller.PrintUserByID, middleware.JWTAuthMiddleware)
-	app.POST("/User", controller.PrintCreateUser, middleware.JWTAuthMiddleware)
-	app.PUT("/User/:id", controller.PrintUpdateUser, middleware.JWTAuthMiddleware)
-	app.DELETE("/User/:id", controller.PrintDeleteUser, middleware.JWTAuthMiddleware)
+	app.GET("/user", controller.PrintUser, middleware.JWTAuthMiddleware)
+	app.GET("/user/:id", controller.PrintUserByID, middleware.JWTAuthMiddleware)
+	app.POST("/user", controller.PrintCreateUser, middleware.JWTAuthMiddleware)
+	app.PUT("/user/:id", controller.PrintUpdateUser, middleware.JWTAuthMiddleware)
+	app.DELETE("/user/:id", controller.PrintDeleteUser, middleware.JWTAuthMiddleware)
 }

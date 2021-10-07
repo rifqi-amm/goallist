@@ -23,5 +23,6 @@ func main() {
 	routes.RouteLongterm(app)
 	routes.RouteLongtermbyage(app)
 	routes.RouteLongtermnolimit(app)
+	routes.RouteUser(app)
 	app.Start(":8080")
 }
